@@ -41,7 +41,23 @@ class SeasonDisplay extends React.Component{
 
                 
                 <div className="season-display-information">
-                    Season Display Information
+                    <div className="flex">
+                       <p>Latitude  </p>
+                       <p className="bigger">138.5</p>
+                    </div>
+                    <div className="flex">
+                       <p>Longitude  </p>
+                       <p className="bigger">138.5</p>
+                    </div>
+                    <div className="flex">
+                       <p>Month  </p>
+                       <p className="bigger">January</p>
+                    </div>
+                    <div className="flex">
+                       <p>Season  </p>
+                       <p className="bigger">Winter</p>
+                    </div>
+                   
                 </div>
             </div>
         )

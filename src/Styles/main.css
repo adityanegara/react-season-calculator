@@ -60,6 +60,10 @@ input[type='number'] {
   margin: 5%;
 }
 
+.season-display .season-display-input label {
+  font-size: 0.8em;
+}
+
 .season-display .season-display-input input {
   min-width: 44px;
   min-height: 44px;
@@ -134,10 +138,34 @@ input[type='number'] {
 }
 
 .season-display .season-display-information {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
   -ms-grid-row: 2;
   -ms-grid-column: 2;
   grid-area: display-information;
-  margin: 5%;
+  margin-top: 5%;
+  margin-right: 6vw;
+  border-radius: 10px;
+  color: #f6f5f5;
+  padding: 2%;
+  background-color: #276678;
+}
+
+.season-display .season-display-information .flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  font-size: 1em;
+}
+
+.season-display .season-display-information .flex .bigger {
+  font-size: 1.5em !important;
 }
 
 @media only screen and (max-width: 600px) {
@@ -161,5 +189,11 @@ input[type='number'] {
   }
   .season-display .season-display-input button {
     width: 75vw;
+  }
+  .season-display .season-display-information {
+    height: 100%;
+    margin-right: 0px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
   }
 }

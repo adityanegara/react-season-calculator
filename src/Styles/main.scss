@@ -51,6 +51,9 @@ input[type='number'] {
     grid-area: display-input;
     font-size: 1.2em;
     margin: 5%;
+    label {
+      font-size: 0.8em;
+    }
     input {
       min-width: 44px;
       min-height: 44px;
@@ -113,8 +116,23 @@ input[type='number'] {
     }
   }
   .season-display-information {
+    height: fit-content;
     grid-area: display-information;
-    margin: 5%;
+    margin-top: 5%;
+    margin-right: 6vw;
+    border-radius: 10px;
+    color: $winter-white-color;
+    padding: 2%;
+    background-color: $winter-base-color-darker;
+    .flex {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      font-size: 1em;
+      .bigger {
+        font-size: 1.5em !important;
+      }
+    }
   }
 }
 
@@ -142,6 +160,12 @@ input[type='number'] {
       button {
         width: 75vw;
       }
+    }
+    .season-display-information {
+      height: 100%;
+      margin-right: 0px;
+      border-bottom-left-radius: 0px;
+      border-bottom-right-radius: 0px;
     }
   }
 }
