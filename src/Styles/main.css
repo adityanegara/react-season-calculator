@@ -1,0 +1,165 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+body {
+  background-color: #d3e0ea;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+.application-title {
+  margin-top: 10vh;
+  font-size: 1.5em;
+  width: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  color: #1687a7;
+}
+
+.season-display {
+  background-color: #f6f5f5;
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 7vh;
+  border-radius: 10px;
+  padding-bottom: 4vh;
+  padding-top: 4vh;
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: 'display-description display-description' 'display-input display-information';
+}
+
+.season-display .season-display-description {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: display-description;
+  text-align: center;
+  font-size: 1.8em;
+  color: #276678;
+}
+
+.season-display .season-display-input {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: display-input;
+  font-size: 1.2em;
+  margin: 5%;
+}
+
+.season-display .season-display-input input {
+  min-width: 44px;
+  min-height: 44px;
+  background-color: #d3e0ea;
+  border: 2px solid #d3e0ea;
+  border-radius: 5px;
+  width: 25vw;
+  color: #276678;
+  font-size: 1em;
+  padding-left: 10px;
+  -webkit-transition: ease-in 0.2s;
+  transition: ease-in 0.2s;
+}
+
+.season-display .season-display-input input:focus {
+  outline: none !important;
+  border: 2px solid #276678;
+}
+
+.season-display .season-display-input button {
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.season-display .season-display-input .season-display-input-form {
+  margin-left: auto;
+  margin-right: auto;
+  color: #276678;
+  width: 80%;
+}
+
+.season-display .season-display-input .season-display-input-form:nth-child(1) {
+  margin-bottom: 1.3vh;
+}
+
+.season-display .season-display-input .season-display-input-form:nth-child(2) {
+  margin-bottom: 1.3vh;
+}
+
+.season-display .season-display-input .season-display-input-form:nth-child(3) {
+  margin-bottom: 2vh;
+}
+
+.season-display .season-display-input #input-month {
+  min-width: 44px;
+  min-height: 44px;
+  background-color: #d3e0ea;
+  border: 2px solid #d3e0ea;
+  border-radius: 5px;
+  width: 26vw;
+  color: #276678;
+  font-size: 1em;
+  padding-left: 10px;
+  -webkit-transition: ease-in 0.2s;
+  transition: ease-in 0.2s;
+}
+
+.season-display .season-display-input button {
+  background-color: #1687a7;
+  font-size: 1em;
+  border: 2px solid #1687a7;
+  width: 26vw;
+  cursor: pointer;
+  border-radius: 5px;
+  color: #f6f5f5;
+  -webkit-transition: ease-in 0.2s;
+  transition: ease-in 0.2s;
+}
+
+.season-display .season-display-input button:hover {
+  background-color: #276678;
+}
+
+.season-display .season-display-information {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: display-information;
+  margin: 5%;
+}
+
+@media only screen and (max-width: 600px) {
+  .season-display {
+    width: 100%;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+        grid-template-areas: 'display-description' 'display-input' 'display-information';
+  }
+  .season-display .season-display-input {
+    font-size: 1.2em;
+    margin: 5%;
+  }
+  .season-display .season-display-input input {
+    width: 70vw;
+  }
+  .season-display .season-display-input #input-month {
+    width: 75vw;
+  }
+  .season-display .season-display-input button {
+    width: 75vw;
+  }
+}
