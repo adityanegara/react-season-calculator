@@ -1,6 +1,20 @@
 import React from "react";
+import {limitNumber, convertNumberToMonth, animateToSummer, animateToWinter} from '../Utils/Helper';
 
 class SeasonDisplay extends React.Component{
+    onButtonClick = () =>{
+      const inputLatiude = document.getElementById('input-latitude').value;
+      const inputLongitude = document.getElementById('input-longitude').value;
+      const inputMonth = document.getElementById('input-month').value;
+      const season = this._getSeason(inputLatiude, inputMonth);
+      if(season === "Summer"){
+        animateToSummer();
+      }else{
+        animateToWinter();
+      }
+      this.props.onCalculateClick(inputLatiude, inputLongitude, inputMonth);
+    }  
+
     render = () =>{
         return(
             <div className="season-display">
@@ -20,22 +34,22 @@ class SeasonDisplay extends React.Component{
                         <label htmlFor="input-month">Month</label>
                         <br/>
                         <select id="input-month">
-                            <option>January</option>
-                            <option>February</option>
-                            <option>March</option>
-                            <option>April</option>
-                            <option>May</option>
-                            <option>June</option>
-                            <option>July</option>
-                            <option>August</option>
-                            <option>September</option>
-                            <option>October</option>
-                            <option>November</option>
-                            <option>December</option>
+                            <option value="0">January</option>
+                            <option value="1" >February</option>
+                            <option value="2">March</option>
+                            <option value="3">April</option>
+                            <option value="4">May</option>
+                            <option value="5">June</option>
+                            <option value="6">July</option>
+                            <option value="7">August</option>
+                            <option value="8">September</option>
+                            <option value="9">October</option>
+                            <option value="10">November</option>
+                            <option value="11">December</option>
                         </select>
                     </div>
                     <div className="season-display-input-form">
-                        <button className="season-display-input-button">Calculate</button>
+                        <button className="season-display-input-button" onClick={()=>{this.onButtonClick()}}>Calculate</button>
                     </div>
                 </div>
 
@@ -43,59 +57,30 @@ class SeasonDisplay extends React.Component{
                 <div className="season-display-information">
                     <div className="flex">
                        <p>Latitude  </p>
-                       <p className="bigger">{this.props.latitude}</p>
+                       <p className="bigger">{limitNumber(this.props.latitude, 5)}</p>
                     </div>
                     <div className="flex">
                        <p>Longitude  </p>
-                       <p className="bigger">{this.props.longitude}</p>
+                       <p className="bigger">{limitNumber(this.props.longitude, 5)}</p>
                     </div>
                     <div className="flex">
                        <p>Month  </p>
-                       <p className="bigger">{this._convertMonth(this.props.month)}</p>
+                       <p className="bigger">{convertNumberToMonth(this.props.month)}</p>
                     </div>
                     <div className="flex">
                        <p>Season  </p>
-                       <p className="bigger">{this._getSeason(this.props.latitude, this.props.month)}</p>
+                       <p className="bigger" id="testing">{this._getSeason(this.props.latitude, this.props.month)}</p>
                     </div>
-                   
                 </div>
             </div>
         )
     }
-    _convertMonth(month){
-        switch(month) {
-            case 0:
-              return 'January';
-            case 1:
-              return 'Feburary';
-            case 2:
-              return 'March';
-            case 3:
-              return 'April';
-            case 4:
-              return 'May';
-            case 5:
-              return 'June';
-            case 6:
-              return 'July';
-            case 7:
-              return 'August';
-            case 8:
-              return 'September';
-            case 9:
-              return 'October';
-            case 10:
-              return 'November'
-            default:
-              return 'December';
-          }
-    }
-
+   
     _getSeason = (latitude, month) =>{ 
         if(month > 2 && month < 9){
             return latitude > 0 ? 'Summer' : 'Winter';
         }else{
-            return latitude > 0 ? 'Winter' : 'Summber';
+            return latitude > 0 ? 'Winter' : 'Summer';
         }
     }
 

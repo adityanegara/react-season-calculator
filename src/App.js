@@ -3,16 +3,26 @@ import SeasonDisplay from "./Components/SeasonDisplay";
 import Title from "./Components/Title";
 import './Styles/main.css';
 class App extends React.Component{
-    state= {latitude: null, longitude: null, errorMessage:'', }
+    state= {latitude: null, longitude: null, errorMessage:'', month:''}
     componentDidMount(){
         this._getUserLocation();
+        this.setState({month:new Date().getMonth()});
+    }
+    onCalculateClick = (latitude, longitude, month) =>{
+        this.setState({ latitude: latitude,
+                        longitude: longitude,
+                        month: month})
     }
     render = () =>{
         if(this.state.errorMessage === '' && this.state.latitude != null){
             return (
                 <React.Fragment>
                     <Title title="SEAS CALC"/>
-                    <SeasonDisplay latitude={this.state.latitude} longitude={this.state.longitude} month={new Date().getMonth()}/>
+                    <SeasonDisplay 
+                    latitude={this.state.latitude} 
+                    longitude={this.state.longitude} 
+                    month={this.state.month}
+                    onCalculateClick={this.onCalculateClick}/>
                 </React.Fragment>
             )
         }

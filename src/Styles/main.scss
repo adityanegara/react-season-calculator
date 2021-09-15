@@ -7,6 +7,7 @@ body {
   margin: 0;
   font-family: $base-font;
   font-weight: $font-medium;
+  transition: ease-in 0.5s;
 }
 
 input::-webkit-outer-spin-button,
@@ -27,8 +28,10 @@ input[type='number'] {
   margin-left: auto;
   margin-right: auto;
   color: $winter-base-color;
+  transition: ease-in 0.2s;
 }
 .season-display {
+  transition: ease-in 0.2s;
   background-color: $winter-white-color;
   width: 75%;
   margin-left: auto;
@@ -42,6 +45,7 @@ input[type='number'] {
     'display-description display-description'
     'display-input display-information';
   .season-display-description {
+    transition: ease-in 0.2s;
     grid-area: display-description;
     text-align: center;
     font-size: 1.8em;
@@ -116,6 +120,7 @@ input[type='number'] {
     }
   }
   .season-display-information {
+    transition: ease-in 0.2s;
     height: fit-content;
     grid-area: display-information;
     margin-top: 5%;
