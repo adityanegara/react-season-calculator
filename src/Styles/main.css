@@ -1,4 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 body {
   background-color: #d3e0ea;
   box-sizing: border-box;
@@ -6,6 +12,7 @@ body {
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
   transition: ease-in 0.5s;
+  overflow-x: hidden;
 }
 
 input::-webkit-outer-spin-button,
